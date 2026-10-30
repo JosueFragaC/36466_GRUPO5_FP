@@ -1,1 +1,44 @@
+#include <stdio.h>
 
+int main() {
+    int cantidad, i;
+    float promedio, suma, altura, max, min;
+
+    printf("Cuantas alturas desea ingresar: ");
+    scanf("%d", &cantidad);
+
+    suma = 0;
+
+    if (cantidad > 0) {
+        for (i = 1; i <= cantidad; i++) {
+            printf("Ingrese la altura: ");
+            scanf("%f", &altura);
+
+            suma = suma + altura;
+
+            if (i == 1) {
+                max = altura;
+                min = altura;
+            } else {
+                if (altura > max) {
+                    max = altura;
+                }
+
+                if (altura < min) {
+                    min = altura;
+                }
+            }
+        }
+
+        promedio = suma / cantidad;
+
+        printf("La media es: %.2f\n", promedio);
+        printf("La altura maxima es: %.2f\n", max);
+        printf("La altura minima es: %.2f\n", min);
+
+    } else {
+        printf("No se aceptan cantidades menores o iguales a cero\n");
+    }
+
+    return 0;
+}
