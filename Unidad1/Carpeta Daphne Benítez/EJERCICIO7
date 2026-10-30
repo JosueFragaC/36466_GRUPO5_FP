@@ -1,1 +1,25 @@
+#include <stdio.h>
 
+int main() {
+    int N, R, i;
+
+    printf("Ingrese un numero positivo: ");
+    scanf("%d", &N);
+
+    if (N > 0) {
+        i = 1;
+
+        while ((i * i) <= N) {
+            i = i + 1;
+        }
+
+        R = i - 1;
+
+        printf("La raiz cuadrada entera es: %d\n", R);
+
+    } else {
+        printf("El numero debe ser positivo\n");
+    }
+
+    return 0;
+}
