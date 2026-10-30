@@ -1,1 +1,22 @@
+#include <stdio.h>
 
+int main() {
+    int n, i, factorial;
+
+    printf("Ingrese un valor entero >= 0: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("El valor es incorrecto, solo enteros positivos!\n");
+    } else {
+        factorial = 1;
+
+        for (i = 1; i <= n; i++) {
+            factorial = factorial * i;
+        }
+
+        printf("El factorial es: %d\n", factorial);
+    }
+
+    return 0;
+}
