@@ -1,1 +1,40 @@
+#include <stdio.h>
 
+int main() {
+    int x, cociente, R;
+    char binario[100];
+    int i = 0, j;
+
+    printf("Ingrese un numero: ");
+    scanf("%d", &x);
+
+    if (x < 0) {
+        printf("El dato introducido no es valido\n");
+    } else {
+        cociente = x;
+
+        if (x == 0) {
+            binario[i] = '0';
+            i++;
+        } else {
+            while (cociente > 0) {
+                R = cociente % 2;
+                binario[i] = R + '0';
+                i++;
+                cociente = cociente / 2;
+            }
+        }
+
+        binario[i] = '\0';
+
+        for (j = 0; j < i / 2; j++) {
+            char temporal = binario[j];
+            binario[j] = binario[i - 1 - j];
+            binario[i - 1 - j] = temporal;
+        }
+
+        printf("El numero binario es: %s\n", binario);
+    }
+
+    return 0;
+}
