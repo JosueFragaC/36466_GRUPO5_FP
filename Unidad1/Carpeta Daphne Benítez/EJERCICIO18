@@ -1,1 +1,22 @@
+#include <stdio.h>
 
+int main() {
+    int A, fila, contador;
+
+    printf("Ingrese el numero de filas: ");
+    scanf("%d", &A);
+
+    if (A < 1) {
+        printf("Numero mal ingresado\n");
+    } else {
+        for (fila = 1; fila <= A; fila++) {
+            for (contador = 1; contador <= fila; contador++) {
+                printf("*");
+            }
+
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
