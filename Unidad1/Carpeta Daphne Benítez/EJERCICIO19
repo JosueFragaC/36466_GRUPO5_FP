@@ -1,1 +1,39 @@
+#include <stdio.h>
 
+int main() {
+    int num, mayor, segundo, cant;
+
+    mayor = 0;
+    segundo = 0;
+    cant = 0;
+
+    printf("Ingrese un valor (0 para terminar): ");
+    scanf("%d", &num);
+
+    while (num != 0) {
+        if (num > 0) {
+            cant = cant + 1;
+
+            if (num > mayor) {
+                segundo = mayor;
+                mayor = num;
+            } else {
+                if (num > segundo && num != mayor) {
+                    segundo = num;
+                }
+            }
+        }
+
+        printf("Ingrese un valor (0 para terminar): ");
+        scanf("%d", &num);
+    }
+
+    if (cant < 2 || segundo == 0) {
+        printf("No hay dos valores distintos\n");
+    } else {
+        printf("El mayor es: %d\n", mayor);
+        printf("El segundo mayor es: %d\n", segundo);
+    }
+
+    return 0;
+}
