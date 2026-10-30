@@ -1,1 +1,32 @@
+#include <stdio.h>
 
+int main() {
+    int secreto, intento, contador;
+
+    secreto = 50;
+    contador = 0;
+
+    printf("Adivine el numero secreto\n");
+    printf("Ingrese un numero: ");
+    scanf("%d", &intento);
+
+    while (intento != secreto) {
+        contador = contador + 1;
+
+        if (intento > secreto) {
+            printf("El numero secreto es menor\n");
+        } else {
+            printf("El numero secreto es mayor\n");
+        }
+
+        printf("Intente de nuevo: ");
+        scanf("%d", &intento);
+    }
+
+    contador = contador + 1;
+
+    printf("Adivinaste el numero\n");
+    printf("Cantidad de intentos: %d\n", contador);
+
+    return 0;
+}
