@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, resultado;
+
+    printf("Ingrese un numero: ");
+    scanf("%d", &n);
+
+    resultado = abs(n) * abs(n) * abs(n);
+
+    printf("El valor absoluto elevado al cubo es: %d\n", resultado);
+
+    return 0;
+}
