@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n1, n2;
+
+    printf("Ingrese numero 1: ");
+    scanf("%d", &n1);
+
+    printf("Ingrese numero 2: ");
+    scanf("%d", &n2);
+
+    if (n1 == n2) {
+        printf("%d y %d son iguales\n", n1, n2);
+    } else if (n1 > n2) {
+        printf("%d es mayor que %d\n", n1, n2);
+    } else {
+        printf("%d es menor que %d\n", n1, n2);
+    }
+
+    return 0;
+}
