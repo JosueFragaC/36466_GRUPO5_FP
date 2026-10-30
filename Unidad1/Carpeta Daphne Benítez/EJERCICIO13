@@ -1,1 +1,29 @@
+#include <stdio.h>
 
+int main() {
+    int n, original, digito, invertido;
+
+    printf("Ingrese un numero positivo: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Numero no valido\n");
+    } else {
+        original = n;
+        invertido = 0;
+
+        while (n > 0) {
+            digito = n % 10;
+            invertido = invertido * 10 + digito;
+            n = n / 10;
+        }
+
+        if (original == invertido) {
+            printf("El numero es CAPICUA\n");
+        } else {
+            printf("El numero no es capicua\n");
+        }
+    }
+
+    return 0;
+}
