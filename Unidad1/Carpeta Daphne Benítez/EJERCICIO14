@@ -1,1 +1,25 @@
+#include <stdio.h>
 
+int main() {
+    int A, B, R;
+
+    printf("Ingrese el primer valor: ");
+    scanf("%d", &A);
+
+    printf("Ingrese el segundo valor: ");
+    scanf("%d", &B);
+
+    if (A <= 0 || B <= 0) {
+        printf("Valores no validos\n");
+    } else {
+        while (B != 0) {
+            R = A % B;
+            A = B;
+            B = R;
+        }
+
+        printf("El MCD es: %d\n", A);
+    }
+
+    return 0;
+}
