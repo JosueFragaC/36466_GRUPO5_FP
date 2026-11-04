@@ -1,3 +1,6 @@
+descripcion 
+elaborado por: Daphne Benitez
+
 #include <stdio.h>
 
 int main() {
