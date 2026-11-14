@@ -1,1 +1,98 @@
 
+#include <stdio.h> // Permite utilizar printf y scanf
+
+int main() {
+
+    // Declaracion de variables
+    int opcion, n, i, j;
+    int suma, resultado;
+
+    // Repite el menu hasta que el usuario elija salir
+    do {
+
+        // Muestra las opciones del menu
+        printf("\n MENU \n");
+        printf("1. Cuadrado hueco\n");
+        printf("2. Serie de numeros elevados al cuadrado y su suma\n");
+        printf("3. Salir\n");
+        printf("Ingrese una opcion: ");
+        scanf("%d", &opcion); // Guarda la opcion ingresada
+
+        // Permite ejecutar una opcion dependiendo de lo que ingrese el usuario
+        switch (opcion) {
+
+            case 1:
+
+                // Solicita el tamano del cuadrado
+                printf("Ingrese el tamano del cuadrado: ");
+                scanf("%d", &n);
+
+                // Controla las filas del cuadrado
+                for (i = 1; i <= n; i++) {
+
+                    // Controla las columnas del cuadrado
+                    for (j = 1; j <= n; j++) {
+
+                        // Comprueba si estamos en los bordes del cuadrado
+                        if (i == 1 || i == n || j == 1 || j == n) {
+                            printf("* "); // Imprime asteriscos en los bordes
+                        } else {
+                            printf("  "); // Deja espacios en el interior
+                        }
+
+                    }
+
+                    printf("\n"); // Salta a la siguiente fila
+                }
+
+                break; // Termina el caso 1
+
+            case 2:
+
+                // Solicita la cantidad de numeros de la serie
+                printf("Ingrese la cantidad de numeros: ");
+                scanf("%d", &n);
+
+                suma = 0; // Inicializa la suma en cero
+
+                printf("Serie: ");
+
+                // Calcula los cuadrados desde 1 hasta n
+                for (i = 1; i <= n; i++) {
+
+                    resultado = i * i; // Eleva el numero al cuadrado
+
+                    printf("%d", resultado); // Muestra el resultado
+
+                    suma = suma + resultado; // Acumula los resultados
+
+                    // Comprueba si todavia faltan numeros por mostrar
+                    if (i < n) {
+                        printf(" + "); // Coloca el signo mas
+                    }
+
+                }
+
+                // Muestra el resultado final de la suma
+                printf(" = %d\n", suma);
+
+                break; // Termina el caso 2
+
+            case 3:
+
+                // Mensaje para indicar que el programa termina
+                printf("Programa finalizado.\n");
+
+                break; // Termina el caso 3
+
+            default:
+
+                // Se ejecuta cuando el usuario ingresa una opcion no valida
+                printf("Opcion incorrecta.\n");
+
+        }
+
+    } while (opcion != 3); // Repite el menu mientras la opcion sea diferente de 3
+
+    return 0; // Finaliza el programa correctamente
+}
